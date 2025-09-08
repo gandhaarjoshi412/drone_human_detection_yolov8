@@ -3,7 +3,7 @@ The dataset consists of **person vs background** images, used to evaluate object
 
 ---
 
-## 📊 Validation Summary
+##  Validation Summary
 
 - **Model:** YOLOv8 Nano  
 - **Dataset:** Person detection (Zenodo)  
@@ -14,7 +14,7 @@ The dataset consists of **person vs background** images, used to evaluate object
 
 ---
 
-## 📈 Results & Plots
+##  Results & Plots
 
 The following evaluation plots are included in this repository:
 
@@ -26,23 +26,14 @@ The following evaluation plots are included in this repository:
 - Recall Curve (`BoxR_curve.png`)
 
 All results are also summarized in the PDF report:  
-👉 [YOLOv8 Validation Report](yolov8_validation_report.pdf)
+ [YOLOv8 Validation Report](yolov8_validation_report.pdf)
 
 ---
 
-## 🔍 Observations
+##  Observations
 
 - High **precision** at higher confidence thresholds → low false positives.  
 - Low **recall** → many persons not detected.  
 - The model is underfitting and struggles with small or occluded persons.
-
----
-
-## 💡 Recommendations
-
-- Apply stronger **data augmentation** (mosaic, rotation, lighting).  
-- Experiment with larger models (**YOLOv8s / YOLOv8m**) for better recall.  
-- Tune confidence and IoU thresholds for deployment.  
-- Consider **class balancing** or collecting more diverse person images.  
 
 ---
