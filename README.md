@@ -1,5 +1,6 @@
-This repository contains the validation results of a **YOLOv8 Nano** model trained on the [Zenodo Images.zip dataset](https://zenodo.org/record/7740081).  
-The dataset consists of **person vs background** images, used to evaluate object detection performance.
+# YOLOv8 Person Detection Validation Results
+
+This repository contains the validation results 
 
 ---
 
@@ -7,10 +8,10 @@ The dataset consists of **person vs background** images, used to evaluate object
 
 - **Model:** YOLOv8 Nano  
 - **Dataset:** Person detection (Zenodo)  
-- **mAP@0.5:** ~0.392  
-- **Best F1-score:** ~0.45 at confidence ≈ 0.107  
-- **Recall:** ~0.33 (many missed detections)  
-- **Precision:** High at high thresholds (few false positives)  
+- **mAP@0.5:** 0.421  
+- **Best F1-score:** 0.47 at confidence ≈ 0.104  
+- **Recall:** 0.45 at confidence 0.000 (maximum recall achieved)  
+- **Precision:** 1.00 at confidence 0.925 (maximum precision achieved)  
 
 ---
 
@@ -30,10 +31,22 @@ All results are also summarized in the PDF report:
 
 ---
 
-##  Observations
+##  Key Observations
 
-- High **precision** at higher confidence thresholds → low false positives.  
-- Low **recall** → many persons not detected.  
-- The model is underfitting and struggles with small or occluded persons.
+- **High precision** at higher confidence thresholds (up to 1.00) → very few false positives
+- **Moderate recall** (0.45 maximum) → some persons not detected, indicating room for improvement
+- **Balanced performance** at optimal F1 threshold (~0.104 confidence)
+- **Class distribution**: 4,553 true person instances, 7,029 true background instances
+- **Detection accuracy**: 3,560 correct person detections, 993 false negatives
+
+---
+
+##  Performance Analysis
+
+The model shows:
+- Strong precision capability with minimal false positives when tuned appropriately
+- Reasonable recall performance but could benefit from improvements to catch more person instances
+- Well-balanced performance at the optimal F1 operating point
+- Good discrimination between person and background classes
 
 ---
